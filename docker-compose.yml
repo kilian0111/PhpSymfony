@@ -1,0 +1,22 @@
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:latest
+    restart: 'no'
+
+    # PORTS CONFIGURATION
+    ports:
+      - "3306:3306"
+
+    # VOLUMES CONFIGURATION
+    volumes:
+      - ./mysqlData:/var/lib/mysql
+
+    # ENVIRONMENT CONFIGURATION
+    # command: --default-authentication-plugin=mysql_native_password
+
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+
